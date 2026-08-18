@@ -135,36 +135,37 @@ curl -G "http://localhost:8000/resolve" --data-urlencode "name=Pantera onca"
 ```
 **Response:**
 ```json
-{"query":"Pantera onca",
-"resolved_by":"vernacular",
-"scientific_name":"Neofelis diardi",
-"col_id":"46H7Y",
-"taxonomic_status":"accepted",
-"extinct":false,
-"classification":[
-{"rank":"domain","name":"Eukaryota"},
-{"rank":"kingdom","name":"Animalia"},
-{"rank":"phylum","name":"Chordata"},
-{"rank":"subphylum","name":"Vertebrata"},
-{"rank":"infraphylum","name":"Gnathostomata"},
-{"rank":"parvphylum","name":"Osteichthyes"},
-{"rank":"megaclass","name":"Tetrapoda"},
-{"rank":"class","name":"Mammalia"},
-{"rank":"subclass","name":"Theria"},
-{"rank":"infraclass","name":"Eutheria"},
-{"rank":"order","name":"Carnivora"},
-{"rank":"suborder","name":"Feliformia"},
-{"rank":"family","name":"Felidae"},
-{"rank":"subfamily","name":"Pantherinae"},
-{"rank":"genus","name":"Neofelis"},
-{"rank":"species","name":"Neofelis diardi"}
-],
-"vernacular_names":[
-{"name":"Panthère longibande","language":"fra"},
-{"name":"Sunda clouded leopard","language":"eng"},
-{"name":"Pantera longibanda","language":"spa"},
-{"name":"Diardi's Clouded Leopard","language":"eng"},
-{"name":"pantera nebulosa","language":"spa"}
-]
+{
+  "query": "Pantera onca",
+  "resolved_by": "vernacular",
+  "scientific_name": "Neofelis diardi",
+  "col_id": "46H7Y",
+  "taxonomic_status": "accepted",
+  "extinct": false,
+  "classification": [
+    { "rank": "domain", "name": "Eukaryota" },
+    { "rank": "kingdom", "name": "Animalia" },
+    { "rank": "phylum", "name": "Chordata" },
+    { "rank": "subphylum", "name": "Vertebrata" },
+    { "rank": "infraphylum", "name": "Gnathostomata" },
+    { "rank": "parvphylum", "name": "Osteichthyes" },
+    { "rank": "megaclass", "name": "Tetrapoda" },
+    { "rank": "class", "name": "Mammalia" },
+    { "rank": "subclass", "name": "Theria" },
+    { "rank": "infraclass", "name": "Eutheria" },
+    { "rank": "order", "name": "Carnivora" },
+    { "rank": "suborder", "name": "Feliformia" },
+    { "rank": "family", "name": "Felidae" },
+    { "rank": "subfamily", "name": "Pantherinae" },
+    { "rank": "genus", "name": "Neofelis" },
+    { "rank": "species", "name": "Neofelis diardi" }
+  ],
+  "vernacular_names": [
+    { "name": "Panthère longibande", "language": "fra" },
+    { "name": "Sunda clouded leopard", "language": "eng" },
+    { "name": "Pantera longibanda", "language": "spa" },
+    { "name": "Diardi's Clouded Leopard", "language": "eng" },
+    { "name": "pantera nebulosa", "language": "spa" }
+  ]
 }
 ```
