@@ -2,18 +2,9 @@
 
 A lightweight FastAPI microservice to resolve scientific and vernacular species names to their Catalogue of Life(COL)/ChecklistBank taxonomic records.
 
-## Overview COL  API Reference
+## Overview ChecklistBank API 
 
-### 1. Microservice Endpoint (`GET /resolve`)
-Resolves a species name into taxonomic information.
-
-- **Query Parameters**:
-  - `name` *(string, required)*: Scientific (e.g. `Panthera onca`) or vernacular name (e.g. `Jaguar`, `tiger`).
-- **Resolution Strategy**:
-  1. Exact scientific name lookup on ChecklistBank.
-  2. Fallback to vernacular name search if scientific lookup yields no results.
-
-### 2. Direct ChecklistBank API Endpoints
+### 1. Direct ChecklistBank API Endpoints
 The service queries the upstream ChecklistBank API (`https://api.checklistbank.org`):
 
 - **Exact Scientific Name Search**:
@@ -24,12 +15,7 @@ The service queries the upstream ChecklistBank API (`https://api.checklistbank.o
   ```
   https://api.checklistbank.org/dataset/{dataset_id}/nameusage/search?content=VERNACULAR_NAME&q={encoded_name}&sortBy=RELEVANCE&offset=0&limit=1
   ```
-
-> **Note**: `{dataset_id}` is set to `3LR` (Catalogue of Life checklist).
-
----
-
-### ChecklistBank Sort Modes Overview
+ChecklistBank Sort Modes Overview
 
 When querying the upstream ChecklistBank `/nameusage/search` endpoint directly:
 - `RELEVANCE` *(default)*: Ranks results by Elasticsearch fulltext match score.
@@ -37,9 +23,20 @@ When querying the upstream ChecklistBank `/nameusage/search` endpoint directly:
 - `NAME`: Orders results alphabetically (A–Z) by scientific name.
 q
 
+> **Note**: `{dataset_id}` is set to `3LR`. 
+
+### 2. Microservice Endpoint (`GET /resolve`)
+Resolves a species name into taxonomic information.
+
+- **Query Parameters**:
+  - `name` *(string, required)*: Scientific (e.g. `Panthera onca`) or vernacular name (e.g. `Jaguar`, `tiger`).
+- **Resolution Strategy**:
+  1. Exact scientific name lookup on ChecklistBank.
+  2. Fallback to vernacular name search if scientific lookup yields no results.
+
 ---
 
-## The Service
+## the Service
 
 ### Quickstart with Docker
 
@@ -56,6 +53,17 @@ docker run -d -p 8000:8000 --name querycol-service querycol
 The service will be available at `http://localhost:8000`. Interactive Swagger UI is accessible at `http://localhost:8000/docs`.
 
 ---
+
+### Microservice Endpoint (`GET /resolve`)I
+
+Resolves a species name into taxonomic information.
+
+- **Query Parameters**:
+  - `name` *(string, required)*: Scientific (e.g. `Panthera onca`) or vernacular name (e.g. `Jaguar`, `tiger`).
+- **Resolution Strategy**:
+  1. Exact scientific name lookup on ChecklistBank.
+  2. Fallback to vernacular name search if scientific lookup yields no results.
+
 
 ### Example Queries
 
