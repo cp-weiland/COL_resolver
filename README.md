@@ -4,7 +4,7 @@ A lightweight FastAPI microservice to resolve scientific and vernacular species 
 
 ## Overview ChecklistBank API 
 
-### 1. Direct ChecklistBank API Endpoints
+### Direct ChecklistBank API Endpoints
 The service queries the upstream ChecklistBank API (`https://api.checklistbank.org`):
 
 - **Exact Scientific Name Search**:
@@ -24,16 +24,6 @@ When querying the upstream ChecklistBank `/nameusage/search` endpoint directly:
 q
 
 > **Note**: `{dataset_id}` is set to `3LR`. 
-
-### 2. Microservice Endpoint (`GET /resolve`)
-Resolves a species name into taxonomic information.
-
-- **Query Parameters**:
-  - `name` *(string, required)*: Scientific (e.g. `Panthera onca`) or vernacular name (e.g. `Jaguar`, `tiger`).
-- **Resolution Strategy**:
-  1. Exact scientific name lookup on ChecklistBank.
-  2. Fallback to vernacular name search if scientific lookup yields no results.
-
 ---
 
 ## the Service
