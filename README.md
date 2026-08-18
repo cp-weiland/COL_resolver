@@ -2,9 +2,9 @@
 
 A lightweight FastAPI microservice to resolve scientific and vernacular species names to their Catalogue of Life(COL)/ChecklistBank taxonomic records.
 
-## Overview ChecklistBank API 
+### Recap ChecklistBank API 
 
-### Direct ChecklistBank API Endpoints
+#### Direct ChecklistBank API Endpoints
 The service queries the upstream ChecklistBank API (`https://api.checklistbank.org`):
 
 - **Exact Scientific Name Search**:
@@ -26,16 +26,16 @@ q
 > **Note**: `{dataset_id}` is set to `3LR`. 
 ---
 
-## the Service
+### The Service
 
-### Quickstart with Docker
+#### Quickstart with Docker
 
-### 1. Build the Docker Image
+#### 1. Build the Docker Image
 ```bash
 docker build -t querycol .
 ```
 
-### 2. Run the Container
+#### 2. Run the Container
 ```bash
 docker run -d -p 8000:8000 --name querycol-service querycol
 ```
@@ -44,7 +44,7 @@ The service will be available at `http://localhost:8000`. Interactive Swagger UI
 
 ---
 
-### Microservice Endpoint (`GET /resolve`)I
+#### Microservice Endpoint (`GET /resolve`)I
 
 Resolves a species name into taxonomic information.
 
@@ -57,7 +57,7 @@ Resolves a species name into taxonomic information.
 
 ### Example Queries
 
-### 1. Example Query using a Scientific Name (*Panthera onca*)
+#### 1. Example Query using a Scientific Name (*Panthera onca*)
 
 **Request:**
 ```bash
@@ -92,7 +92,7 @@ curl -G "http://localhost:8000/resolve" --data-urlencode "name=Panthera onca"
 
 ---
 
-### 2. Example Query using a Vernacular Name (*Jaguar*)
+#### 2. Example Query using a Vernacular Name (*Jaguar*)
 
 **Request:**
 ```bash
