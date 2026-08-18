@@ -123,8 +123,9 @@ curl -G "http://localhost:8000/resolve" --data-urlencode "name=Jaguar"
     { "name": "tigre real", "language": "spa" }
   ]
 }
-
-### 3. Issue: Example Query with name ambiguity
+```
+---
+#### 3. Issue: Example Query with name ambiguity
 
 Omitting the 'h' in Panthera leads to matching via vernacular names that include 'Pantera' - here "Neofelis diardi" - as a name component.
 
@@ -132,7 +133,8 @@ Omitting the 'h' in Panthera leads to matching via vernacular names that include
 ```bash
 curl -G "http://localhost:8000/resolve" --data-urlencode "name=Pantera onca"
 ```
-
+**Response:**
+```json
 {"query":"Pantera onca",
 "resolved_by":"vernacular",
 "scientific_name":"Neofelis diardi",
@@ -165,3 +167,4 @@ curl -G "http://localhost:8000/resolve" --data-urlencode "name=Pantera onca"
 {"name":"pantera nebulosa","language":"spa"}
 ]
 }
+```
